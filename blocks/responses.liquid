@@ -1,0 +1,16 @@
+{% for response in responses %}
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>{{ response.name }}</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		{% if response.headers.size > 0 %}
+			{% for header in response.headers %}
+				<code>&lt; {{ header.name }}: {{ header.value | escape }}</code><br>
+			{% endfor %}
+		{% endif %}
+		{% if response.body.size > 0 %}
+			<pre class="prettyprint">{{ response.body | escape }}</pre>
+		{% endif %}
+	</li>
+{% endfor %}

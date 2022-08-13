@@ -1,0 +1,9 @@
+<ul class="nav nav-pills" id="group-tab">
+	{% for resourceGroup in resourceGroups %}
+		<li>
+			<a href="#{{ resourceGroup.name | dasherize }}" data-toggle="tab">
+				<strong>{{ resourceGroup.name }}</strong>
+			</a>
+		</li>
+	{% endfor %}
+</ul>

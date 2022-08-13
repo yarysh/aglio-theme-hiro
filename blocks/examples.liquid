@@ -1,0 +1,4 @@
+{% for example in examples %}
+	{% render 'requests' with example.requests as requests %}
+	{% render 'responses' with example.responses as responses %}
+{% endfor %}

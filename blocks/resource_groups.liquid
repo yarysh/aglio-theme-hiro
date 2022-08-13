@@ -1,0 +1,17 @@
+{% for resourceGroup in resourceGroups %}
+	<div class="tab-pane" id="{{ resourceGroup.name | dasherize }}">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 id="{{ resourceGroup.name | dasherize }}">{{ resourceGroup.name }}</h2>
+			</div>
+			<div class="panel-body">
+				<div class="lead">
+					<small>
+						{{ resourceGroup.description | markdownize }}
+					</small>
+				</div>
+				{% render 'resources' with resourceGroup.resources as resources %}
+			</div>
+		</div>
+	</div>
+{% endfor %}

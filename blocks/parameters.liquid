@@ -1,0 +1,32 @@
+<table class="parameters">
+	<thead>
+		<tr>
+			<th class="parameter-name">Name</th>
+			<th>Description</th>
+			<th>Required</th>
+			<th>Type</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	{% for parameter in parameters %}
+		<tr>
+			<td class="parameter-name">
+				<strong>{{ parameter.name }}</strong>
+			</td>
+			<td class="parameter-description">{{ parameter.description | markdownize }}</td>
+			<td class="parameter-required">
+				{% if parameter.required %}
+					<strong>Required</strong>
+				{% endif %}
+			</td>
+			<td class="parameter-type">
+				<span class="label label-default label-{{ parameter.type }}">{{ parameter.type }}</span>
+			</td>
+			<td class="parameter-example">
+				{% if parameter.example %}
+					<code>{{ parameter.example }}</code>
+				{% endif %}
+			</td>
+		</tr>
+	{% endfor %}
+</table>

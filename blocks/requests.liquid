@@ -1,0 +1,16 @@
+{% for request in requests %}
+	<li class="list-group-item bg-default response">
+		<strong>Requests</strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		{% if request.headers.size > 0 %}
+			{% for header in request.headers %}
+				<code>&gt; {{ header.name }}: {{ header.value | escape }}</code><br>
+			{% endfor %}
+		{% endif %}
+		{% if request.body.size > 0 %}
+			<pre class="prettyprint">{{ request.body | escape }}</pre>
+		{% endif %}
+	</li>
+{% endfor %}
