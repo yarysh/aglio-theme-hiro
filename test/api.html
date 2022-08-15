@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Real World API</title>
+		<meta name="description" content="This API Blueprint demonstrates a real world example documenting a portion of [App.net API](http://developers.app.net).">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<style>
+			tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
+			pre.prettyprint { border: 0px !important; background-color: #fff; margin-bottom: -0.5em; }
+			table { width: 100%; border-collapse: collapse; margin-bottom: 1.3em; }
+			th { background: #f2f2f2; }
+			td, th { padding: 6px 9.5px; border: 1px solid #e4e4e4; text-align: left; }
+			tbody tr:nth-of-type(even){ background:rgba(220,220,220,0.2); }
+			.panel-heading h2 { margin-top: 0.5em; }
+			.bg-default { background-color: #F8F8F8; }
+			.snippet { background: #FFFFFF; list-style: none; display: none; }
+			.snippet-toggle { margin-top: -0.3em; }
+			.parameters { margin-bottom: 0; }
+			.parameters-li { padding: 0; }
+			.parameters td { vertical-align: top; border-color: #eee; border-width: 0 0 1px 0; }
+			.parameters td p { margin-bottom: 0; }
+			.parameters td code { padding: 0; }
+			.parameters thead th { padding: 3px 9px 3px 11px; color: #595959; font-weight: 400; font-size: 0.75em; }
+			.parameters tbody tr:nth-of-type(even){ background: #fff; }
+			.parameters tbody tr:last-child td { border-bottom: 0; }
+			.parameters tbody td:nth-child(1) { width: 10%; min-width: 100px; }
+			.parameters tbody td:nth-child(2) { width: 60%; }
+			.parameter-example { word-break: keep-all; }
+			.parameter-name { text-align: right; }
+			.parameters .label-string { background: #99ac6d; }
+			.parameters .label-boolean { background: #8298bd; }
+			.parameters .label-integer { background: #cd6a50; }
+			.parameters .label-time { background: #f0ad4e; }
+			@media screen and (max-width: 640px) {
+				.parameters {
+					overflow-x: auto;
+					display: block;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1>Real World API</h1>
+						<h2><small><p>This API Blueprint demonstrates a real world example documenting a portion of <a href="http://developers.app.net">App.net API</a>.</p>
+</small></h2>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-bottom: 2em;">
+				<div class="col-md-12">
+					<ul class="nav nav-pills" id="group-tab">
+	
+		<li>
+			<a href="#posts" data-toggle="tab">
+				<strong>Posts</strong>
+			</a>
+		</li>
+	
+</ul>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="tab-content">
+						
+	<div class="tab-pane" id="posts">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 id="posts">Posts</h2>
+			</div>
+			<div class="panel-body">
+				<div class="lead">
+					<small>
+						<p>This section groups <a href="http://App.net">App.net</a> post resources.</p>
+
+					</small>
+				</div>
+				
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-primary">GET</span>
+				<code>/stream/0/posts/{post_id}</code>
+			</div>
+			<div class="panel-body">
+				<p>Returns a specific Post.</p>
+
+			</div>
+			<ul class="list-group">
+				
+					<li class="list-group-item bg-default"><strong>Parameters</strong></li>
+					<li class="list-group-item parameters-li">
+						<table class="parameters">
+	<thead>
+		<tr>
+			<th class="parameter-name">Name</th>
+			<th>Description</th>
+			<th>Required</th>
+			<th>Type</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	
+		<tr>
+			<td class="parameter-name">
+				<strong>post_id</strong>
+			</td>
+			<td class="parameter-description"><p>The id of the Post.</p>
+</td>
+			<td class="parameter-required">
+				
+					<strong>Required</strong>
+				
+			</td>
+			<td class="parameter-type">
+				<span class="label label-default label-string">string</span>
+			</td>
+			<td class="parameter-example">
+				
+					<code>1</code>
+				
+			</td>
+		</tr>
+	
+</table>
+
+					</li>
+				
+				
+					
+	
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>200</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    &#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }
+}
+</pre>
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-danger">DELETE</span>
+				<code>/stream/0/posts/{post_id}</code>
+			</div>
+			<div class="panel-body">
+				<p>Delete a Post. The current user must be the same user who created the Post.</p>
+
+			</div>
+			<ul class="list-group">
+				
+					<li class="list-group-item bg-default"><strong>Parameters</strong></li>
+					<li class="list-group-item parameters-li">
+						<table class="parameters">
+	<thead>
+		<tr>
+			<th class="parameter-name">Name</th>
+			<th>Description</th>
+			<th>Required</th>
+			<th>Type</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	
+		<tr>
+			<td class="parameter-name">
+				<strong>post_id</strong>
+			</td>
+			<td class="parameter-description"><p>The id of the Post.</p>
+</td>
+			<td class="parameter-required">
+				
+					<strong>Required</strong>
+				
+			</td>
+			<td class="parameter-type">
+				<span class="label label-default label-string">string</span>
+			</td>
+			<td class="parameter-example">
+				
+					<code>1</code>
+				
+			</td>
+		</tr>
+	
+</table>
+
+					</li>
+				
+				
+					
+	
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>204</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-success">POST</span>
+				<code>/stream/0/posts</code>
+			</div>
+			<div class="panel-body">
+				<p>Create a new Post object. Mentions and hashtags will be parsed out of the post text, as will bare URLs…</p>
+
+			</div>
+			<ul class="list-group">
+				
+				
+					
+	
+	<li class="list-group-item bg-default response">
+		<strong>Requests</strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&gt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    &#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }
+}
+</pre>
+		
+	</li>
+
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>201</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    &#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }
+}
+</pre>
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-primary">GET</span>
+				<code>/stream/0/posts</code>
+			</div>
+			<div class="panel-body">
+				<p>Retrieves all posts.</p>
+
+			</div>
+			<ul class="list-group">
+				
+				
+					
+	
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>200</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    [&#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }],
+    ...
+}
+</pre>
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-success">POST</span>
+				<code>/stream/0/posts/{post_id}/star</code>
+			</div>
+			<div class="panel-body">
+				<p>Save a given Post to the current User’s stars. This is just a “save” action, not a sharing action.</p>
+<p><em>Note: A repost cannot be starred. Please star the parent Post.</em></p>
+
+			</div>
+			<ul class="list-group">
+				
+					<li class="list-group-item bg-default"><strong>Parameters</strong></li>
+					<li class="list-group-item parameters-li">
+						<table class="parameters">
+	<thead>
+		<tr>
+			<th class="parameter-name">Name</th>
+			<th>Description</th>
+			<th>Required</th>
+			<th>Type</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	
+		<tr>
+			<td class="parameter-name">
+				<strong>post_id</strong>
+			</td>
+			<td class="parameter-description"><p>The id of the Post.</p>
+</td>
+			<td class="parameter-required">
+				
+					<strong>Required</strong>
+				
+			</td>
+			<td class="parameter-type">
+				<span class="label label-default label-string">string</span>
+			</td>
+			<td class="parameter-example">
+				
+					<code>1</code>
+				
+			</td>
+		</tr>
+	
+</table>
+
+					</li>
+				
+				
+					
+	
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>200</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    &#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }
+}
+</pre>
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span class="btn btn-danger">DELETE</span>
+				<code>/stream/0/posts/{post_id}/star</code>
+			</div>
+			<div class="panel-body">
+				<p>Remove a Star from a Post.</p>
+
+			</div>
+			<ul class="list-group">
+				
+					<li class="list-group-item bg-default"><strong>Parameters</strong></li>
+					<li class="list-group-item parameters-li">
+						<table class="parameters">
+	<thead>
+		<tr>
+			<th class="parameter-name">Name</th>
+			<th>Description</th>
+			<th>Required</th>
+			<th>Type</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	
+		<tr>
+			<td class="parameter-name">
+				<strong>post_id</strong>
+			</td>
+			<td class="parameter-description"><p>The id of the Post.</p>
+</td>
+			<td class="parameter-required">
+				
+					<strong>Required</strong>
+				
+			</td>
+			<td class="parameter-type">
+				<span class="label label-default label-string">string</span>
+			</td>
+			<td class="parameter-example">
+				
+					<code>1</code>
+				
+			</td>
+		</tr>
+	
+</table>
+
+					</li>
+				
+				
+					
+	
+
+	
+	<li class="list-group-item bg-default response">
+		<strong>Response <code>200</code></strong>
+		<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+	</li>
+	<li class="list-group-item snippet">
+		
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+		
+		
+			<pre class="prettyprint">{
+    &#34;data&#34;: {
+        &#34;id&#34;: &#34;1&#34;, // note this is a string
+        &#34;user&#34;: {
+            ...
+        },
+        &#34;created_at&#34;: &#34;2012-07-16T17:25:47Z&#34;,
+        &#34;text&#34;: &#34;@berg FIRST post on this new site #newsocialnetwork&#34;,
+        &#34;source&#34;: {
+            &#34;client_id&#34;: &#34;udxGzAVBdXwGtkHmvswR5MbMEeVnq6n4&#34;,
+            &#34;name&#34;: &#34;Clientastic for iOS&#34;,
+            &#34;link&#34;: &#34;http://app.net&#34;
+        },
+        &#34;machine_only&#34;: false,
+        &#34;reply_to&#34;: null,
+        &#34;thread_id&#34;: &#34;1&#34;,
+        &#34;num_replies&#34;: 3,
+        &#34;num_reposts&#34;: 0,
+        &#34;num_stars&#34;: 0,
+        &#34;entities&#34;: {
+            &#34;mentions&#34;: [{
+                &#34;name&#34;: &#34;berg&#34;,
+                &#34;id&#34;: &#34;2&#34;,
+                &#34;pos&#34;: 0,
+                &#34;len&#34;: 5
+            }],
+            &#34;hashtags&#34;: [{
+                &#34;name&#34;: &#34;newsocialnetwork&#34;,
+                &#34;pos&#34;: 34,
+                &#34;len&#34;: 17
+            }],
+            &#34;links&#34;: [{
+                &#34;text&#34;: &#34;this new site&#34;,
+                &#34;url&#34;: &#34;https://join.app.net&#34;
+                &#34;pos&#34;: 20,
+                &#34;len&#34;: 13
+            }]
+        },
+        &#34;you_reposted&#34;: false,
+        &#34;you_starred&#34;: false
+    },
+    &#34;meta&#34;: {
+        &#34;code&#34;: 200,
+    }
+}
+</pre>
+		
+	</li>
+
+
+
+
+				
+			</ul>
+		</div>
+	
+
+
+			</div>
+		</div>
+	</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script>
+			jQuery(function($) {
+				$('#group-tab a[data-toggle="tab"]').on("click", function(e) {
+					window.location.hash = $(this).attr("href");
+				});
+
+				if(window.location.hash){
+					$('#group-tab a:first').tab('show');
+					$('#group-tab a[href$="'+ window.location.hash +'"]').tab("show");
+				} else {
+					$('#group-tab a:first').tab('show');
+				}
+
+				$('.snippet-toggle').on("click", function(e) {
+					e.preventDefault();
+					var target = $(this).data('target');
+					$(this).parent().next().toggle();
+					if ($(this).text() == "SHOW") {
+						$(this).text("HIDE");
+					} else {
+						$(this).text("SHOW");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
