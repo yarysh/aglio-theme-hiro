@@ -1,6 +1,6 @@
 # aglio-theme-hiro
 
-![Build status](https://github.com/yarysh/aglio-theme-hiro/actions/workflows/main.yml/badge.svg)
+![Build status](https://github.com/yarysh/aglio-theme-hiro/actions/workflows/build.yml/badge.svg)
 ![Snyk](https://snyk.io/test/github/yarysh/aglio-theme-hiro/badge.svg)
 
 
