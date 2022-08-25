@@ -1,7 +1,7 @@
 {
   "name": "aglio-theme-hiro",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hiro theme for the Aglio API Blueprint renderer",
   "main": "main.js",
   "scripts": {
     "test": "node --test"
@@ -10,6 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/yarysh/aglio-theme-hiro.git"
   },
+  "keywords": [
+    "api",
+    "blueprint",
+    "protagonist",
+    "snowcrash",
+    "hiro",
+    "html",
+    "parse",
+    "markdown"
+  ],
   "author": "Andrey Yarysh",
   "license": "MIT",
   "bugs": {
